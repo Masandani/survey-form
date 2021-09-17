@@ -11,9 +11,9 @@ const Start = () => {
   return (
     <div className="w-screen h-screen bg-gray-100">
       <h1 className="text-gray-400 text-2xl font-medium pt-14">Please answer the questions carefully.</h1>
-      <img src={Bimage} alt="back-ground" className="opacity-10 mx-auto" />
+      <img src={Bimage} alt="" className="opacity-10 mx-auto" />
       <button
-        className="bg-green-300 hover:bg-green-500 hover:cursor-pointer text-white font-bold py-2.5 px-12 mt-4  focus:outline-none focus:shadow-outline"
+        className="rounded bg-green-300 hover:bg-green-500 hover:cursor-pointer text-white font-bold py-2.5 px-12 mt-4  focus:outline-none focus:shadow-outline"
         type="button"
         onClick={handleClickStart}
       >
