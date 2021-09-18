@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 import questionsList from "../../questionsList/questionsList.json";
@@ -13,7 +13,10 @@ const PageTwo = () => {
     history.push("/3");
   };
   const questions = questionsList;
-  const [answerQuestion2, setAnswerQuestion2] = useLocalStorage("answerTwo","");
+  const [answerQuestion2, setAnswerQuestion2] = useLocalStorage(
+    "answerTwo",
+    ""
+  );
   const handleChangeTextArea = (event) => {
     setAnswerQuestion2(event.target.value);
     submitedForm();
@@ -23,7 +26,6 @@ const PageTwo = () => {
   const submitedForm = () => {
     setSubmited(true);
   };
- 
 
   const pageTransition = {
     duration: 0.5,
@@ -31,7 +33,6 @@ const PageTwo = () => {
 
   return (
     <motion.div
-     
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -58,7 +59,6 @@ const PageTwo = () => {
             ></textarea>
           </div>
           <div className="py-8">
-          
             <button
               className="rounded bg-green-300 hover:bg-green-500 hover:cursor-pointer text-white font-bold py-2.5 px-6 mt-8  focus:outline-none focus:shadow-outline mx-2"
               type="button"

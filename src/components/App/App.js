@@ -23,6 +23,13 @@ import "./App.css";
 const App = () => {
   const [isSubmited, setIsSubmited] = useState(false);
 
+  
+
+  window.history.pushState(null, null, window.location.href);
+  window.onpopstate = function () {
+    window.history.go(1);
+  };
+
   function submitForm() {
     setIsSubmited(true);
   }
