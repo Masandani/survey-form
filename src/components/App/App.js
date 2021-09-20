@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,21 +9,18 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import PageOne from "../PageOne/PageOne";
-import PageTwo from "../PageTwo/PageTwo";
-import PageThree from "../PageThree/PageThree";
 import FormSignUp from "../FormSignUp/FormSignUp";
 import Start from "../Start/Start";
 import TimeUp from "../TimeUp/TimeUp";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import FinalPage from "../FinalPage/FinalPage";
+import Questions from "../Questions/Questions"
+
 import "./App.css";
 
 const App = () => {
   const [isSubmited, setIsSubmited] = useState(false);
-
-  
 
   window.history.pushState(null, null, window.location.href);
   window.onpopstate = function () {
@@ -33,7 +30,25 @@ const App = () => {
   function submitForm() {
     setIsSubmited(true);
   }
+
   let location = useLocation();
+
+  const headerHandle = () => {
+    if (location.pathname === "/questions/1") {
+      setIsSubmited(true)
+    } else if (location.pathname === "/questions/2") {
+      setIsSubmited(true)
+    } else if (location.pathname === "/questions/3") {
+      setIsSubmited(true)
+    }
+  }
+
+  useEffect(() => {
+    headerHandle()
+
+  }, [isSubmited])
+
+
   return (
     <div className="App">
       {isSubmited && <Header />}
@@ -43,11 +58,7 @@ const App = () => {
             {!isSubmited ? <FormSignUp submitForm={submitForm} /> : <Start />}
           </Route>
 
-          <Route path="/1" component={PageOne} />
-
-          <Route path="/2" component={PageTwo} />
-
-          <Route path="/3" component={PageThree} />
+          <Route path="/questions/:id" component={Questions} />
 
           <Route path="/timeup" component={TimeUp} />
 

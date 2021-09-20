@@ -6,7 +6,7 @@ const Start = () => {
   let history = useHistory();
 
   function handleClickStart() {
-    history.push("/1");
+    history.push("/questions/1");
   }
   return (
     <div className="w-screen h-screen bg-gray-100">

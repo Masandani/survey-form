@@ -9,17 +9,26 @@ const FinalPage = () => {
     console.log("LastName:", signUpForm.lastname);
     console.log("Email:", signUpForm.email);
 
-    let answerOne = localStorage.getItem("answerOne");
-    answerOne = JSON.parse(answerOne);
-    console.log("AnswerOne:", answerOne);
+    let answer1 = localStorage.getItem("answer1");
+    answer1 = JSON.parse(answer1);
+    console.log("Answer1:", answer1);
 
-    let answerTwo = localStorage.getItem("answerTwo");
-    answerTwo = JSON.parse(answerTwo);
-    console.log("answerTwo:", answerTwo);
+    let answer2 = localStorage.getItem("answer2");
+    answer2 = JSON.parse(answer2);
+    console.log("Answer2:", answer2);
 
-    let answerThree = localStorage.getItem("answerThree");
-    answerThree = JSON.parse(answerThree);
-    console.log("answerThree:", answerThree);
+    let answer3 = localStorage.getItem("answer3");
+    answer3 = JSON.parse(answer3);
+    console.log("Answer3:", answer3);
+
+    let answer4 = localStorage.getItem("answer4");
+    answer4 = JSON.parse(answer4);
+    console.log("Answer4:", answer4);
+
+    let answer5 = localStorage.getItem("answer5");
+    answer5 = JSON.parse(answer5);
+    console.log("Answer5:", answer5);
+
   }, []);
 
   return (

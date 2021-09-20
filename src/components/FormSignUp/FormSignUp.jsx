@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import useForm from "../../useForm/useForm";
-import validate from "../../validateInfo/validateInfo";
+import useForm from "../../hooks/useForm/useForm";
+import validate from "../../util/validateInfo/validateInfo";
 import "./formSignup.css";
 
 const FormSignUp = ({ submitForm }) => {
